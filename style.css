@@ -1,0 +1,111 @@
+body {
+    background: linear-gradient(to bottom, pink, white); /* Gradient background */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Courier New', Courier, monospace; /* Set font to Courier */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+}
+
+.top-part {
+    text-align: center;
+    font-size: 25px;
+    font-family: 'Courier New', Courier, monospace; /* Set font to Courier */
+    margin-bottom: 20px; /* Space below top part */
+    opacity: 0; /* Start with invisible */
+    animation: fadeIn 1s ease-in forwards; /* Apply fade-in animation */
+}
+
+.container-wrapper {
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping to the next line if space is limited */
+    justify-content: center; /* Center align containers horizontally */
+    gap: 10px; /* Space between containers */
+    padding: 0 10px; /* Horizontal padding for responsiveness */
+    opacity: 0; /* Start with invisible */
+    animation: fadeIn 1.5s ease-in forwards; /* Apply fade-in animation with delay */
+    animation-delay: 0.5s; /* Delay to start after top-part */
+}
+
+.container {
+    text-align: center;
+    background: linear-gradient(to bottom, rgb(255, 242, 242), rgb(255, 219, 225)); /* Gradient background */
+    padding: 15px; /* Reduced padding */
+    border-radius: 10px; /* Reduced border radius */
+    box-shadow: 0 2px 4px rgba(168, 137, 137, 0.2); /* Smaller shadow */
+    max-width: 300px; /* Max width to keep containers compact */
+    flex: 1; /* Allow containers to grow and shrink */
+    min-width: 220px; /* Minimum width to keep layout stable */
+    font-family: 'Courier New', Courier, monospace; /* Set font to Courier */
+    cursor: pointer; /* Change cursor to pointer for clickable elements */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease; /* Smooth transition for hover effects */
+    opacity: 0; /* Start with invisible */
+    animation: fadeIn 2s ease-in forwards; /* Apply fade-in animation */
+    animation-delay: 0.5s; /* Delay to stagger the animation */
+}
+
+.container:hover {
+    transform: scale(1.02); /* Slightly enlarge container on hover */
+    box-shadow: 0 4px 8px rgba(168, 137, 137, 0.4); /* Enhanced shadow on hover */
+    background: linear-gradient(to bottom, rgb(255, 229, 229), rgb(255, 199, 204)); /* Lighter background on hover */
+}
+
+.container.paused {
+    background: linear-gradient(to bottom, rgba(200, 200, 200, 0.8), rgba(200, 200, 200, 1)); /* Gray gradient background */
+    color: #666; /* Darker gray text */
+    cursor: not-allowed; /* Change cursor to indicate disabled state */
+}
+
+h1 {
+    color: #d63384; /* Darker pink text */
+    font-size: 1.2em; /* Reduced font size */
+    margin-bottom: 10px; /* Reduced margin */
+    font-family: 'Courier New', Courier, monospace; /* Set font to Courier */
+}
+
+h2 {
+    color: #53424b; /* Darker text color */
+    background-color: white; /* White background */
+    padding: 10px; /* Padding for better readability */
+    border-radius: 5px; /* Rounded corners */
+}
+
+#localTime, #atlantaTime, #jakartaTime,
+#sydneyTime, #laTime,
+#localTimeLeft, #atlantaTimeLeft, #jakartaTimeLeft,
+#sydneyTimeLeft, #laTimeLeft {
+    font-size: 1em; /* Adjusted font size for better fit */
+    color: #990099; /* Deep purple text */
+    margin: 5px 0; /* Margin to space elements */
+    font-family: 'Courier New', Courier, monospace; /* Set font to Courier */
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsive design adjustments */
+@media (max-width: 600px) {
+    .top-part {
+        font-size: 1.2em; /* Smaller font size on smaller screens */
+        margin-bottom: 10px; /* Reduce margin below top part */
+    }
+    
+    .container {
+        max-width: 100%; /* Ensure containers use full width */
+    }
+    
+    .container-wrapper {
+        flex-direction: column; /* Stack containers vertically on small screens */
+        align-items: center; /* Center align containers vertically */
+    }
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Time Display</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="top-part">
+        <h1 class="title">Current times for each of our locations!</h1>
+        <h2>Click to pause. Click again to resume!</h2>
+    </div>
+
+    <div class="container-wrapper">
+        <div class="container" id="atlanta" data-timezone="America/New_York">
+            <h1>Atlanta & Boston (EST)</h1>
+            <div id="atlantaTime"></div>
+            <div id="atlantaTimeLeft"></div>
+        </div>
+        <div class="container" id="jakarta" data-timezone="Asia/Jakarta">
+            <h1>Jakarta (WIB)</h1>
+            <div id="jakartaTime"></div>
+            <div id="jakartaTimeLeft"></div>
+        </div>
+        <div class="container" id="sydney" data-timezone="Australia/Sydney">
+            <h1>Sydney (AEST)</h1>
+            <div id="sydneyTime"></div>
+            <div id="sydneyTimeLeft"></div>
+        </div>
+        <div class="container" id="la" data-timezone="America/Los_Angeles">
+            <h1>Los Angeles (PDT)</h1>
+            <div id="laTime"></div>
+            <div id="laTimeLeft"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
